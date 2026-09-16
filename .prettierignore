@@ -1,0 +1,6 @@
+dist/
+state/
+node_modules/
+.upstream/
+*.log
+THIRD_PARTY_NOTICES.md

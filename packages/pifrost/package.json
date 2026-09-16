@@ -1,0 +1,33 @@
+{
+  "name": "pifrost",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pi extension: use Aifrost (ChatGPT Web bridge) as an OpenAI-compatible inference provider",
+  "keywords": [
+    "pi-package",
+    "aifrost",
+    "pi",
+    "chatgpt",
+    "openai"
+  ],
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/N0xMare/aifrost",
+    "directory": "packages/pifrost"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/index.ts"
+    ]
+  },
+  "files": [
+    "extensions",
+    "README.md",
+    "LICENSE"
+  ]
+}

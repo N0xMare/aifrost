@@ -1,0 +1,58 @@
+{
+  "name": "aifrost",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local API that exposes chatgpt.com Chat tabs as a stateful OpenAI-compatible token engine (headed Brave)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/N0xMare/aifrost"
+  },
+  "bugs": "https://github.com/N0xMare/aifrost/issues",
+  "homepage": "https://github.com/N0xMare/aifrost#readme",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "aifrost": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "tsx src/cli.ts serve",
+    "start": "node dist/cli.js serve",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:pifrost": "vitest run packages/pifrost/test",
+    "demo:m1": "AIFROST_BROWSER=mock tsx scripts/demo-m1.ts",
+    "login:chatgpt": "tsx scripts/chatgpt-login.ts",
+    "test:chromium": "vitest run test/integration/chromium",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck:all": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json && tsc -p packages/pifrost/tsconfig.json"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "fastify": "^5.4.0",
+    "nanoid": "^5.1.5",
+    "pino": "^9.7.0",
+    "ws": "^8.18.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.85.1",
+    "@eslint/js": "^9.39.5",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.16.5",
+    "@types/ws": "^8.18.1",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.7",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^3.2.4"
+  },
+  "license": "Apache-2.0"
+}
